@@ -1,6 +1,21 @@
-for i in range(16, 30+1):
-    # 1-line fizzbuzz on branch rebase-test
-    if i%3==0 or i%5==0:
-        print('fizz'*(i%3==0)+'buzz'*(i%5==0))
-    else:
-        print(i)
+from typing import Union
+
+def fizzbuzz(n: int) -> Union[str, int]:
+    """
+    Returns 'fizz' for multiples of 3, 'buzz' for multiples of 5,
+    'fizzbuzz' for multiples of both, and the number otherwise.
+    """
+    if n % 15 == 0:
+        return 'fizzbuzz'
+    elif n % 3 == 0:
+        return 'fizz'
+    elif n % 5 == 0:
+        return 'buzz'
+    return n
+
+def main():
+    for i in range(16, 31):
+        print(fizzbuzz(i))
+
+if __name__ == "__main__":
+    main()
